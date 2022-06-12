@@ -1,0 +1,26 @@
+{{ form.value | json}}
+<div class="login-form">
+  <form #form="ngForm">
+    <h1 class="p-2">Login</h1>
+    <div class="p-3 text-center">
+      <div class="input-field">
+        <input type="email" #usernameInfo="ngModel" name="username" placeholder="abc@abc.com" [(ngModel)]="username"
+          autocomplete="nope" pattern=".*@.*" required>
+        <span *ngIf="usernameInfo.invalid && usernameInfo?.dirty" class="text-danger">please enter proper email abc@abc.com
+        </span>
+      </div>
+      <div class="input-field">
+        <input #passwordInfo="ngModel" type="password" name="password" placeholder="Password" [(ngModel)]="password"
+          autocomplete="new-password" required>
+        <span *ngIf="passwordInfo?.invalid && passwordInfo?.dirty" class="text-danger">please enter password </span>
+
+      </div>
+    </div>
+    <div class="action">
+      <button [disabled]="form.invalid" [ngClass]="{ 'btn btn-dark' : form.invalid ,
+                                                     'btn btn-primary' : form.valid  }" (click)="login(form)">
+        Login
+      </button>
+    </div>
+  </form>
+</div>

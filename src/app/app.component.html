@@ -1,0 +1,9 @@
+<div class="text-warning">sessionStorage so please naviagate bettween pages and users in same tab </div> 
+<div class="p-2 float-right" *ngIf="appService.loginSuccessUser?.username">
+  <button class="btn btn-info m-2"  (click)="naviagetToHome()"> Home</button>
+  <button class="btn btn-info m-2" *ngIf="isAdmin" (click)="naviagetToSummary()"> Summary</button>
+  <span>{{ appService.loginSuccessUser?.username}}</span>
+  <button class="btn btn-danger m-2" (click)="logout()"> LogOut</button>
+</div>
+
+<router-outlet></router-outlet>

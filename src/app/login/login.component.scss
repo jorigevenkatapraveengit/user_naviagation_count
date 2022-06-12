@@ -1,0 +1,24 @@
+
+@import '~bootstrap/scss/bootstrap';
+
+
+  .login-form {
+    @extend  .w-25 , .m-auto , .bg-white , .rounded;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+
+    .input-field input {
+      @extend .p-2 ,.d-block , .w-100 , .border-top-0 , .border-left-0 ,.border-right-0 , .border-bottom-1  , .border-primary !optional;
+      transition: all .2s;
+      &:focus {
+        @extend .border  , .border-0 , .border-info;
+      }
+    }
+
+    .action button {
+      @extend    .p-2 ,.d-block , .w-100 , .border-0   !optional;
+      letter-spacing: 0.2px;
+      transition: all .3s;
+    }
+
+  }
+ 

@@ -1,0 +1,32 @@
+<p>
+  summary works!
+</p>
+
+<div class="d-flex w-50 m-auto ">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <ng-container *ngFor="let item of  tabArr ">
+          <th scope="col">{{item }}</th>
+        </ng-container>
+
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of userNavigationCount | keyvalue ">
+        <tr>
+
+          <th scope="row">{{item.key}}</th>
+          <ng-container *ngFor="let tab of  tabArr ">
+
+            <td  >{{item.value[tab]}}</td>
+
+          </ng-container>
+
+        </tr>
+
+      </ng-container>
+    </tbody>
+  </table>
+</div>
